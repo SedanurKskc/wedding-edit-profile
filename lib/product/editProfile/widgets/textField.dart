@@ -9,20 +9,16 @@ class TextFieldWidget extends BaseStateless {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: paddings.h(sizes.s16),
-      margin: paddings.v(sizes.s10) + paddings.h(sizes.s4),
-      height: 40,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(sizes.s4),
-        color: colorScheme(context).surface,
-        boxShadow: [
-          BoxShadow(
-            color: colorScheme(context).surface,
-            blurRadius: 0.4,
-            offset: Offset(0.40, 0.50),
+     padding: paddings.h(sizes.s20),
+     margin: paddings.v(sizes.s10),
+          height: sizes.s40,
+          width: deviceWidth(context) - sizes.s40,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(4),
+            color: ColorUtility.surface,
+            boxShadow: [BoxShadow(color: ColorUtility.onSurface.withOpacity(0.1), blurRadius: 5, spreadRadius: 1, offset: const Offset(0, 2))],
           ),
-        ],
-      ),
+      
       child: TextField(
         controller: controller,
         decoration: InputDecoration(hintText: hintTextController, border: InputBorder.none),
